@@ -42,9 +42,9 @@ void mkn_exit() {
     pthread_mutex_lock(&exit_lock);
     exit_requested = true;
     pthread_mutex_unlock(&exit_lock);
-    pthread_join(keyboard_thread, NULL);
-    pthread_join(capture_thread, NULL);
-    libmk_disable_control(NULL);
+    pthread_join(keyboard_thread, 0);
+    pthread_join(capture_thread, 0);
+    libmk_disable_control(0);
     libmk_exit();
 }
 
