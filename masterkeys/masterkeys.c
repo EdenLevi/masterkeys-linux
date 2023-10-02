@@ -13,8 +13,10 @@
 #include <stdlib.h>
 #include <Python.h>
 
+#define MIN_PYTHON_VER 3
 
-#if PY_MAJOR_VERSION >= 3
+
+#if PY_MAJOR_VERSION >= MIN_PYTHON_VER
     #define PyInt_FromLong PyLong_FromLong
     #define PyInt_Check PyLong_Check
     #define PyInt_AsLong PyLong_AsLong
